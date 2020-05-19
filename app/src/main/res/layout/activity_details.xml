@@ -19,7 +19,7 @@
             android:id="@+id/IMAGE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_launcher_background"
+
             android:layout_marginTop="50dp"/>
 
 
@@ -121,14 +121,17 @@
                 android:text="Specification"
                 android:textSize="30dp" />
 
-            <TextView
-                android:id="@+id/specification"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Enter your details"
-                android:textSize="18dp"/>
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/specification"
+            android:layout_width="347dp"
+            android:layout_height="163dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:text="Enter your details"
+            android:textSize="18dp" />
 
 
     </LinearLayout>

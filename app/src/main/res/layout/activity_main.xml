@@ -17,6 +17,7 @@
         android:layout_marginTop="50dp"
         android:text="Make one of the following choices"
         android:textSize="20dp"
+        android:textColor="#A85F83"
         android:textStyle="bold"></TextView>
 
 
@@ -27,19 +28,21 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
 
+
         >
 
         <RadioButton
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="View Mobile Records" />
+            android:text="View Mobile Records"
+            />
 
         <RadioButton
             android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Mobile Record" />
+            android:text="Insert Mobile Record" />
 
         <RadioButton
             android:id="@+id/update"

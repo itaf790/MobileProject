@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class DeleteActivity extends AppCompatActivity {
@@ -26,24 +27,30 @@ EditText TextID;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
-
         buttonDelete=findViewById(R.id.btnDelete);
         TextID=findViewById(R.id.DeleteID);
-         value = (String)TextID.getText().toString();
-        databaseReference =
-                FirebaseDatabase.getInstance().getReference(InsertActivity.Database_Path);
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+        value = (String)TextID.getText().toString();
 
+
+
+
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference(InsertActivity.Database_Path);
+
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
 
                     buttonDelete.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            databaseReference =
-                                    FirebaseDatabase.getInstance().getReference(InsertActivity.Database_Path).child(value);
-                        databaseReference.removeValue();
+
+
+                            Query applesQuery = ref.child("Mobile_Database").orderByChild("value");
+                            applesQuery.getRef().removeValue();
+
+
 
                             Toast.makeText(getApplicationContext(),
                                     " Deleted Successfully ",
@@ -56,10 +63,11 @@ EditText TextID;
                     });
 
 
-
-                    }
-
+                }
             }
+
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

@@ -39,14 +39,16 @@ public class InsertActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     int Image_Request_Code = 7;
     ProgressDialog progressDialog ;
-   static String Storage_Path = "Uploads/";
-   static String Database_Path = "Mobile_Database";
+    static String Storage_Path = "Uploads/";
+    static String Database_Path = "Mobile_Database";
     int ImageUploadId =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);
+
+
         storageReference = FirebaseStorage.getInstance().getReference();
         databaseReference = FirebaseDatabase.getInstance().getReference(Database_Path);
         choose = (Button)findViewById(R.id.Choose);
@@ -183,7 +185,7 @@ public class InsertActivity extends AppCompatActivity {
         else {
             Toast.makeText(InsertActivity.this,
 
-                    "Please Select Image",
+                    "Please Select Image ",
                     Toast.LENGTH_LONG).show();
         }
     }

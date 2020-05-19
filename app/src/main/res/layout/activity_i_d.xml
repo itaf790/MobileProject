@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Enter Data to update"
+        android:text="Enter ID to update"
         android:textSize="30dp"
         android:layout_marginTop="70dp"/>
 
@@ -34,8 +34,10 @@
 
         <EditText
             android:id="@+id/textid"
-            android:layout_width="278dp"
+            android:layout_width="129dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:hint="ID" />
     </LinearLayout>
 

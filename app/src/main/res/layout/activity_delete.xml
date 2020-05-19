@@ -10,20 +10,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Type the ID to delete"
+        android:text="Type ID to delete"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        />
 
 
     <EditText
         android:id="@+id/DeleteID"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="number"
-        android:layout_marginTop="20dp"/>
-
+        android:gravity="center"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btnDelete"
